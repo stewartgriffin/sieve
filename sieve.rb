@@ -9,9 +9,10 @@ class Sieve
 
   def primes
     @primes.each do |n|
-      while n < @primes.last
-        n *= 2
-        @primes.delete(n)
+      current_n = n
+      while current_n < @primes.last
+        current_n += n
+        @primes.delete(current_n)
       end
     end
     @primes
